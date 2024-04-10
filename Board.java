@@ -111,12 +111,9 @@ public class Board {
     }
 
     /**
-     * Determines if the selected cards form a valid group for removal.
-     * In Elevens, the legal groups are (1) a pair of non-face cards
-     * whose values add to 11, and (2) a group of three cards consisting of
-     * a jack, a queen, and a king in some order.
-     * @param selectedCards the list of the indices of the selected cards.
-     * @return true if the selected cards form a valid group for removal;
+     * @return true if the selected indices are all on the board (i.e. 
+     * selectedCards is not empty or null, and it doesn't have negative
+     * or too-big indices;
      *         false otherwise.
      */
     public boolean isLegal(Integer[] selectedCards) {
@@ -124,11 +121,7 @@ public class Board {
 
 
     /**
-     * Determine if there are any legal plays left on the board.
-     * In Elevens, there is a legal play if the board contains
-     * (1) a pair of non-face cards whose values add to 11, or (2) a group
-     * of three cards consisting of a jack, a queen, and a king in some order.
-     * @return true if there is a legal play left on the board;
+     * @return true if there is at least one card left on the board;
      *         false otherwise.
      */
     public boolean anotherPlayIsPossible() {
@@ -142,27 +135,4 @@ public class Board {
 
     }
 
-    /**
-     * Check for an 11-pair in the selected cards.
-     * @param selectedCards selects a subset of this board.  It is list
-     *                      of indexes into this board that are searched
-     *                      to find an 11-pair.
-     * @return true if the board entries in selectedCards
-     *              contain an 11-pair; false otherwise.
-     */
-    private boolean containsPairSum11(Integer[] selectedCards) {
-
-    }
-
-    /**
-     * Check for a JQK in the selected cards.
-     * @param selectedCards selects a subset of this board.  It is list
-     *                      of indexes into this board that are searched
-     *                      to find a JQK group.
-     * @return true if the board entries in selectedCards
-     *              include a jack, a queen, and a king; false otherwise.
-     */
-    private boolean containsJQK(Integer[] selectedCards) {
-
-    }
 }
