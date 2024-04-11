@@ -52,8 +52,14 @@ public class Deck {
     }
 
     /**
-     * Randomly permute the given collection of cards
-     * and reset the size to represent the entire deck.
+     * Apply an "efficient selection shuffle" to the argument.
+     * The selection shuffle algorithm conceptually maintains two sequences
+     * of cards: the selected cards (initially empty) and the not-yet-selected
+     * cards (initially the entire deck). It repeatedly does the following until
+     * all cards have been selected: randomly remove a card from those not yet
+     * selected and add it to the selected cards.
+     * An efficient version of this algorithm makes use of arrays/arraylists to avoid
+     * searching for an as-yet-unselected card.
      */
     public void shuffle() {
 
